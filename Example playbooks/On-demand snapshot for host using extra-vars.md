@@ -1,5 +1,9 @@
 ## On-demand snapshot to host
-Using 2 vars (`host` and `volumegroup`) this playbook will invoke a new snapshot, view, and host mapping for the specified host and volume group.
+Using 2 vars (`host` and `volumegroup`) this playbook will:
+* Use the `volumegroup` var to generate a snapshot name. 
+* Generate a snapshot using the auto-generated name. 
+* Create a view using the name of the resulting snapshot. 
+* Create a mapping to the `host` for the resulting view. 
 
 ### Example 
 ```
