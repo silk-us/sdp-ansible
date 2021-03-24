@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-
 DOCUMENTATION = r'''
 ---
 module: sdp_hostroupmapping
@@ -21,13 +20,11 @@ options:
         required: true
         type: str
 
-
 author:
-    - J.R. Phillips (@JayAreP)
+    - J.R. Phillips (github - @JayAreP)
 '''
 
 EXAMPLES = r'''
-# Create a host group mapping event.
 - name: "Create Test Host mapping"
     sdp_hostgroupmapping:
         hostgroupname: "ATHG01"
@@ -35,7 +32,6 @@ EXAMPLES = r'''
 '''
 
 RETURN = r'''
-# These are examples of possible return values, and in general should use other names for return values.
 id:
     description: The id of the working event.
     type: str

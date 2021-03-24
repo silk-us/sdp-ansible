@@ -25,11 +25,10 @@ options:
         type: bool
 
 author:
-    - J.R. Phillips (@JayAreP)
+    - J.R. Phillips (github - @JayAreP)
 '''
 
 EXAMPLES = r'''
-# Create a host group object.
 - name: "Create Test Host Group"
     sdp_hostgroup:
         name: "ATHG01"
@@ -38,10 +37,9 @@ EXAMPLES = r'''
 '''
 
 RETURN = r'''
-# These are examples of possible return values, and in general should use other names for return values.
 id:
     description: The id of the working object.
-    type: str
+    type: int
     returned: always
     sample: '44'
 name:

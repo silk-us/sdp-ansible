@@ -32,18 +32,11 @@ options:
         required: false
         type: list
 
-
-# Specify this value according to your collection
-# in format of namespace.collection.doc_fragment_name
-extends_documentation_fragment:
-    - my_namespace.my_collection.my_doc_fragment_name
-
 author:
-    - J.R. Phillips (@JayAreP)
+    - J.R. Phillips (github - @JayAreP)
 '''
 
 EXAMPLES = r'''
-# Create a host object.
 - name: "Create Host"
   sdp_host: 
     name: "testHost01"
@@ -55,10 +48,9 @@ EXAMPLES = r'''
 '''
 
 RETURN = r'''
-# These are examples of possible return values, and in general should use other names for return values.
 id:
     description: The id of the working object.
-    type: str
+    type: int
     returned: always
     sample: '44'
 name:

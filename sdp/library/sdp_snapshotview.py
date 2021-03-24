@@ -1,5 +1,25 @@
 #!/usr/bin/python
 
+DOCUMENTATION = r'''
+---
+
+author:
+    - J.R. Phillips (github - @JayAreP)
+'''
+
+EXAMPLES = r'''
+
+'''
+
+RETURN = r'''
+id:
+    description: The id of the working object.
+    type: int
+    returned: always
+    sample: '44'
+
+'''
+
 # Import the SDP module here as well. 
 from krest import EndPoint
 from ansible.module_utils.basic import *

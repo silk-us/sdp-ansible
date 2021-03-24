@@ -2,7 +2,7 @@
 
 DOCUMENTATION = r'''
 ---
-module: sdp_snapshotviewmapping
+module: sdp_hostviewmapping
 
 short_description: Module for host mapping events on the Silk SDP platform. 
 
@@ -15,29 +15,26 @@ options:
         description: The host name name for the host mapping event
         required: true
         type: str
-    snapshot:
+    snapshotview:
         description: The snapshot view name for the host mapping event.
         required: true
         type: str
-
 
 author:
     - J.R. Phillips (@JayAreP)
 '''
 
 EXAMPLES = r'''
-# Create a host mapping event.
 - name: "Create Test Host mapping"
-    sdp_snapshotview:
+    sdp_hostviewmapping:
         hostname: "ATH01"
-        snapshot: "backup_02"
+        snapshotview: "VolGrp01:backup_02-view"
 '''
 
 RETURN = r'''
-# These are examples of possible return values, and in general should use other names for return values.
 id:
     description: The id of the working event.
-    type: str
+    type: int
     returned: always
     sample: '44'
 hostname:
@@ -45,11 +42,11 @@ hostname:
     type: str
     returned: always
     sample: 'ATH01'
-snapshot:
-    description: The snapshot name of the working event.
+snapshotview:
+    description: The snapshot view name of the working event.
     type: str
     returned: always
-    sample: 'backup_02'
+    sample: 'VolGrp01:backup_02-view'
 
 '''
 

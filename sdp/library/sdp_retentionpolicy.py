@@ -1,5 +1,57 @@
 #!/usr/bin/python
 
+DOCUMENTATION = r'''
+---
+module: sdp_host
+
+short_description: Module for host objects on the Silk SDP platform. 
+
+version_added: "0.1.1"
+
+description: This is the module you would use to declare a host object on any Silk SDP deployment. 
+
+options:
+    name:
+        description: The name for the policy object
+        required: true
+        type: int
+    snapshots:
+        description: The number of snapshots for the policy to contain.
+        required: false
+        type: int
+    weeks:
+        description: The number of weeks for the policy to contain snapshots.
+        required: false
+        type: int
+    days:
+        description: The number of days for the policy to contain snapshots.
+        required: false
+        type: int
+    hours:
+        description: The number of hours for the policy to contain snapshots.
+        required: false
+        type: int
+
+author:
+    - J.R. Phillips (github - @JayAreP)
+'''
+
+EXAMPLES = r'''
+- name: "Create Host"
+  sdp_retentionpolicy: 
+    name: "monthly_snapshots"
+    weeks: 4
+'''
+
+RETURN = r'''
+id:
+    description: The id of the working object.
+    type: int
+    returned: always
+    sample: '44'
+
+'''
+
 # Import the SDP module here as well. 
 from krest import EndPoint
 from ansible.module_utils.basic import *

@@ -1,5 +1,54 @@
 #!/usr/bin/python
 
+DOCUMENTATION = r'''
+---
+module: sdp_hostmapping
+
+short_description: Module for host group mapping events on the Silk SDP platform. 
+
+version_added: "0.1.1"
+
+description: This is the module you would use to declare a host group mapping event on any Silk SDP deployment. 
+
+options:
+    hostname:
+        description: The name for the host group you wish to map the volume to.
+        required: true
+        type: str
+    volumename:
+        description: The name of the volume you wish to map. 
+        required: true
+        type: str
+
+author:
+    - J.R. Phillips (github - @JayAreP)
+'''
+
+EXAMPLES = r'''
+- name: "Create Test Host mapping"
+    sdp_hostgroupmapping:
+        hostname: "ATH01"
+        volumename: "ATV01"
+'''
+
+RETURN = r'''
+id:
+    description: The id of the working event.
+    type: int
+    returned: always
+    sample: '44'
+host:
+    description: The host name of the working event.
+    type: str
+    returned: always
+    sample: 'ATH01'
+volume:
+    description: The volume name of the working event.
+    type: str
+    returned: always
+    sample: 'ATV01'
+'''
+
 # Import the SDP module here as well. 
 from krest import EndPoint
 from ansible.module_utils.basic import *

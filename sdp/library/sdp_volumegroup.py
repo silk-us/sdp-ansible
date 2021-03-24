@@ -1,5 +1,68 @@
 #!/usr/bin/python
 
+DOCUMENTATION = r'''
+---
+module: sdp_volumegroup
+
+short_description: Module for host group objects on the Silk SDP platform. 
+
+version_added: "0.1.1"
+
+description: This is the module you would use to declare a host group object on any Silk SDP deployment. 
+
+options:
+    name:
+        description: The name for the volume group object.
+        required: true
+        type: str
+    dedupe:
+        description: enable dedupe on the volume group. 
+        required: false
+        type: bool
+    capacityPolicy:
+        description: Flag for allowing different host times. 
+        required: false
+        type: bool
+    quotaInGB:
+        description: GB quyota limit for the volume group.
+        required: false
+        type: int
+
+author:
+    - J.R. Phillips (github - @JayAreP)
+'''
+
+EXAMPLES = r'''
+- name: "Create Test Host Group"
+    sdp_hostgroup:
+        name: "ATHG01"
+        description: "test host group"
+        allowDifferentHostTypes: True
+'''
+
+RETURN = r'''
+id:
+    description: The id of the working object.
+    type: int
+    returned: always
+    sample: '44'
+name:
+    description: The name of the working object.
+    type: str
+    returned: always
+    sample: hostgroup06
+quota:
+    description: Quota in bytes for the volume group.
+    type: int
+    returned: sometimes
+    sample: 41943040
+dedupe:
+    description: Flag for enforcing de-duplication on the volume group. 
+    type: bool
+    returned: sometimes
+    sample: False
+'''
+
 # Import the SDP module here as well. 
 from krest import EndPoint
 from ansible.module_utils.basic import *
