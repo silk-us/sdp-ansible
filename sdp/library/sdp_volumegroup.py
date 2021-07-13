@@ -111,7 +111,8 @@ def main():
 # ----- Below here is specific endpoint ops ------
 # Create the volume object (do not save yet)
   
-  size = vars["quotaInGB"]*2**20+1
+  size = vars["quotaInGB"]*2**20
+  sizechk = vars["quotaInGB"]*2**20+1
   obj_request = sdp.new(sdpclass)
   obj_request.name = vars["name"]
   obj_request.is_dedup = vars["dedupe"]
@@ -152,7 +153,7 @@ def main():
       except Exception as error:
         module.fail_json(msg=str(error))
       changed=True
-    elif sdpobj.quota != size:
+    elif sdpobj.quota != sizechk:
       sdpobj.quota = size
       try:
         sdpobj.save()

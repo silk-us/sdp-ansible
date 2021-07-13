@@ -2,7 +2,7 @@
 ## This suite of modules is still undergoing development. 
 
 ### Installation 
-For now, clone this repo and copy the modules to `/usr/share/ansible/plugins/modules` or `~/.ansible/plugins/modules`. The resulting path should be `~/.ansible/plugins/modules/sdp/library/`.
+For now, clone this repo and copy the modules contained in `/sdp/library` to `/usr/share/ansible/plugins/modules` or `~/.ansible/plugins/modules`. The resulting path should be `~/.ansible/plugins/modules/sdp/library/`.
 
 ## Requirements
 * Python 2.7 or 3.1 (tested)
