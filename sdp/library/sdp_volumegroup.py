@@ -111,7 +111,7 @@ def main():
 # ----- Below here is specific endpoint ops ------
 # Create the volume object (do not save yet)
   
-  size = vars["quotaInGB"]*2**20
+  size = vars["quotaInGB"]*2**20+1
   obj_request = sdp.new(sdpclass)
   obj_request.name = vars["name"]
   obj_request.is_dedup = vars["dedupe"]
@@ -133,14 +133,14 @@ def main():
         changed=False,
         removed=False
       )
-      
+
+  changed=False
 # If it does not, then save the above object as is.
   if len(find.hits) == 0:
     try:
         sdpobj = obj_request.save()
     except Exception as error:
         module.fail_json(msg=str(error))
-    
     changed=True
 # Otherwise, check the current object's secondary parameters against the request, and adjust as needed. 
   else:
