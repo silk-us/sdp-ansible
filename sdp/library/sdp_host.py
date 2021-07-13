@@ -201,7 +201,7 @@ def main():
   if vars["iqn"]:
     iqn = vars["iqn"]
     portclass = "host_iqns"
-    findports = sdp.search(portclass, pwwn__in=iqn)
+    findports = sdp.search(portclass, iqn__in=iqn)
     if len(findports.hits) == 0:
         port_request = sdp.new(portclass)
         port_request.iqn = iqn
